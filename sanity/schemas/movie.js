@@ -24,6 +24,19 @@ const movies = {
       },
     },
     {
+      name: 'releaseDate',
+      title: 'Release date',
+      type: 'datetime',
+    },
+    {
+      name: 'poster',
+      title: 'Poster Image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    },
+    {
       title: 'Actor',
       name: 'actor',
       type: 'reference',
@@ -34,13 +47,17 @@ const movies = {
   preview: {
     select: {
       title: 'title',
+      date: 'releaseDate',
+      media: 'poster',
       actor: 'actor.name',
     },
     prepare(selection) {
       const { title, actor } = selection
       return {
         title,
+        date: selection.date,
         subtitle: `Actor: ${actor}`,
+        media: selection.media,
       }
     },
   },
