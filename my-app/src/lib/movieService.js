@@ -12,3 +12,10 @@ export const getMovies = async () => {
 }
 
   
+export const getMovie = async (slug) => {
+  const data = await client.fetch(
+    `*[_type == "movie" && slug.current == $slug]{${movieFields}}`,
+    { slug }
+  )
+  return data
+}

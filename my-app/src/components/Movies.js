@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { getMovies } from '../lib/movieService'
+import { getMovies, getMovie } from '../lib/movieService'
 
 export default function Movies() {
     const [ data, setData] = useState([])
@@ -11,11 +11,19 @@ export default function Movies() {
             console.log(movies)
         }
         getMoviesData()
+
+        const getMovieData = async () => {
+            const slug = 'movie-1'
+            const movie = await getMovie(slug)
+            console.log(movie)
+        }
+        getMovieData()
+
     }, [])
     
     return (
         <>
-            <h2>Hei</h2>
+            <h2>All Movies</h2>
             {data?.length > 0 ? <p>{JSON.stringify(data)}</p> : null}
         </>
     )
