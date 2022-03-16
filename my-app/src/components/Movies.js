@@ -1,5 +1,21 @@
 import { useState, useEffect } from 'react'
 import { getMovies, getMovie } from '../lib/movieService'
+import { Link } from 'react-router-dom'
+
+function MovieList({ data }) {
+    return (
+      <section >
+        {data?.map((mov) => (
+          <article key={mov.slug}>
+            <h2>{mov.title}</h2>
+            <Link to={mov.slug}>
+              {mov.slug}
+            </Link>
+          </article>
+        ))}
+      </section>
+    )
+  }
 
 export default function Movies() {
     const [ data, setData] = useState([])
@@ -11,20 +27,12 @@ export default function Movies() {
             console.log(movies)
         }
         getMoviesData()
-
-        const getMovieData = async () => {
-            const slug = 'movie-1'
-            const movie = await getMovie(slug)
-            console.log(movie)
-        }
-        getMovieData()
-
     }, [])
     
     return (
         <>
-            <h2>All Movies</h2>
-            {data?.length > 0 ? <p>{JSON.stringify(data)}</p> : null}
+            <p className='breadcrumb'>Home / Movies</p>
+            <MovieList data={data}/>
         </>
     )
 }

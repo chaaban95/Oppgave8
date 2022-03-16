@@ -17,5 +17,5 @@ export const getMovie = async (slug) => {
     `*[_type == "movie" && slug.current == $slug]{${movieFields}}`,
     { slug }
   )
-  return data
+  return data?.[0]
 }
