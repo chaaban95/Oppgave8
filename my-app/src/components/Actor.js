@@ -19,7 +19,7 @@ export default function Actor () {
     return (
         <>
             <p className='breadcrumb'>Home / Actors / {data?.slug}</p>
-            <Title title={data?.title} />
+            <Title title={data?.name} />
         </>
     )
 }

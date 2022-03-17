@@ -8,9 +8,9 @@ function ActorList({ data }) {
       <section className='cards'>
         {data?.map((act) => (
           <article key={act.slug}>
-            <h2>{act.title}</h2>
+            <h2>{act.name}</h2>
             <Link to={act.slug}>
-              {act.slug}
+              read more
             </Link>
           </article>
         ))}

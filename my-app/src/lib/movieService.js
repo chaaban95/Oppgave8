@@ -7,7 +7,7 @@ const movieFields = `
 `
 
 const actorFields = `
-  title,
+  name,
   'slug': slug.current,
 `
 
@@ -27,6 +27,7 @@ export const getMovie = async (slug) => {
 
 export const getActors = async () => {
   const data = await client.fetch(`*[_type == "actor"]{${actorFields}}`)
+  console.log("actors", data);
   return data
 }
 
