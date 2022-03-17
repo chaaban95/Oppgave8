@@ -1,6 +1,6 @@
 import {MdLocalMovies as icon} from 'react-icons/md'
 
-const movies = {
+const movie = {
   name: 'movie',
   title: 'Movie',
   type: 'document',
@@ -63,4 +63,4 @@ const movies = {
   },
 }
 
-export default movies
+export default movie

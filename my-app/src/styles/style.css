@@ -48,3 +48,30 @@ nav a.active {
     font-size: small;
     
 }
+
+.cards {
+    max-width: 85%; 
+    margin: 0 auto;
+    gap: 20px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    min-width: 150px;
+    padding: 10px;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+@media screen and (max-width: 750px) {
+    .cards { 
+        flex-direction: column;
+    }
+}

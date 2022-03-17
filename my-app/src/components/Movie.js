@@ -5,12 +5,12 @@ import Title from './Title'
 
 export default function Movie () {
     const { slug } = useParams()
-    const [moviee, setMovie] = useState(null)
+    const [data, setData] = useState(null)
 
     useEffect(()=>{
         const getMovieData = async () => {
             const movieData = await getMovie(slug)
-            setMovie(movieData)
+            setData(movieData)
             console.log(movieData)
         }
         getMovieData()
@@ -18,8 +18,8 @@ export default function Movie () {
     
     return (
         <>
-            <p className='breadcrumb'>Home / Movies / {moviee?.slug}</p>
-            <Title title={moviee?.title} />
+            <p className='breadcrumb'>Home / Movies / {data?.slug}</p>
+            <Title title={data?.title} />
         </>
     )
 }
