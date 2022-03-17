@@ -3,11 +3,13 @@ import client from './client'
 const movieFields = `
   title,
   'actor': actor->name,
+  'image': poster{alternativeText, caption, asset->{url}},
   'slug': slug.current,
 `
 
 const actorFields = `
   name,
+  'image': image{alternativeText, caption, asset->{url}},
   'slug': slug.current,
 `
 

@@ -1,6 +1,7 @@
 * {
     box-sizing: border-box;
     margin: 0;
+    padding: 0;
 }
 
 img {
@@ -8,7 +9,7 @@ img {
     display: block;
 }
 
-a {
+nav a {
     text-decoration: none;
     color:midnightblue;
 }
@@ -30,8 +31,13 @@ nav ul {
     gap: 15px;
 }
 
-nav a.active {
-    text-decoration: underline;
+nav ul a:hover {
+    color: navy;
+    border-bottom: 2px solid currentColor;
+}
+
+nav ul a.active {
+    border-bottom: 2px solid currentColor;
     color:navy;
     font-weight: bold;
 }
@@ -46,7 +52,6 @@ nav a.active {
     text-align: center;
     margin-bottom: 30px;
     font-size: small;
-    
 }
 
 .cards {
@@ -55,14 +60,17 @@ nav a.active {
     gap: 20px;
     padding: 20px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
 }
 
 .card {
-    min-width: 150px;
+    display: flex;
+    flex-direction: column;
+    width: 30%;
     padding: 10px;
+    align-items: center;
 }
 
 .title {
@@ -70,8 +78,55 @@ nav a.active {
     margin-bottom: 30px;
 }
 
+.posters {
+    width: 200px;
+}
+
+.actors {
+    width: 200px;
+}
+
+.card>h2,
+.card>img,
+.card>h4 {
+    margin-bottom: 10px;
+}
+
+.card>a{
+    text-decoration: none;
+    border-radius: 4px;
+    transition-duration: 0.4s;
+    background-color: navy;
+    border: none;
+    color: white;
+    opacity: 0.8;
+    text-align: center;
+    padding: 10px 25px;
+}
+
+.card>a:hover {
+    opacity: 1;
+}
+
+.card>a:active {
+    transform: scale(0.98);
+}
+
 @media screen and (max-width: 750px) {
     .cards { 
         flex-direction: column;
+    }
+
+    .card {
+        width: 100%;
+        align-items: center;
+    }
+
+    .posters {
+        width: 300px;
+    }
+    
+    .actors {
+        width: 300px;
     }
 }
