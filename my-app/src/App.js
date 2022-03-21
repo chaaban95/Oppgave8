@@ -12,7 +12,7 @@ export default function App() {
     <Navigation />
     <Routes>
       <Route index element={<Home />} />
-      <Route path="home" element={<Home />} />
+      <Route path="/" element={<Home />} />
       <Route path="movies" >
         <Route index element={<Movies />} />
         <Route path=":slug" element={<Movie />} />
