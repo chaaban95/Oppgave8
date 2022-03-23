@@ -10,7 +10,7 @@ function Description({ desc, img }) {
             src={img}
             alt={""}
         />
-        <h4 className='story'>Story</h4>
+        <h4 className='story'>Plot</h4>
         <p className='summary'>{desc}</p>
         </>
     )
@@ -19,15 +19,21 @@ function Description({ desc, img }) {
 export default function Movie () {
     const { slug } = useParams()
     const [data, setData] = useState(null)
+    const [loading, setLoading] = useState(false)
 
     useEffect(()=>{
         const getMovieData = async () => {
+            setLoading(true)
             const movieData = await getMovie(slug)
+            setLoading(false)
             setData(movieData)
-            console.log(movieData)
         }
         getMovieData()
     }, [slug])
+
+    if (loading) {
+        return <p>Loading...</p>
+    }
     
     return (
         <>

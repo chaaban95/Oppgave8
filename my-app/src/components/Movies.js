@@ -37,21 +37,21 @@ export default function Movies() {
     getMoviesData()
  }, [])
 
-const handleFilter = async (event) => {
-  const actor = event.target.value
-  let dataa
-  if (actor === 'All') {
-    dataa = await getMovies()
-  } else {
-    dataa = await getMovieByActor(actor)
-  }
-  setData(dataa)
-}
+  const handleFilter = async (event) => {
+    const actor = event.target.value
+    let dataa
+    if (actor === 'All') {
+      dataa = await getMovies()
+    } else {
+      dataa = await getMovieByActor(actor)
+    }
+    setData(dataa)
+ }
 
-if (loading) {
-  return <p>Loading...</p>
-}
-  
+  if (loading) {
+    return <p>Loading...</p>
+  }
+    
   return (
     <>
       <p className='breadcrumb'>Home / Movies</p>

@@ -15,7 +15,7 @@ const actorFields = `
 `
 const fields = `
   title,
-  'actor': actor->name.current,
+  'actor': actor->name,
   'image': poster{alternativeText, caption, asset->{url}},
   'slug': slug.current,
 `
@@ -50,7 +50,7 @@ export const getActor = async (slug) => {
 
 export async function getMovieByActor(actor) {
   const data = await client.fetch(
-    `*[_type == "movie" && actor->name.current==$actor]{${fields}}`,
+    `*[_type == "movie" && actor->name==$actor]{${fields}}`,
     { actor }
   )
   return data

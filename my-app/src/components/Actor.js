@@ -17,15 +17,21 @@ function Picture({ img }) {
 export default function Actor () {
     const { slug } = useParams()
     const [data, setData] = useState(null)
+    const [loading, setLoading] = useState(false)
 
     useEffect(()=>{
         const getActorData = async () => {
+            setLoading(true)
             const actorData = await getActor(slug)
+            setLoading(false)
             setData(actorData)
-            console.log(actorData)
         }
         getActorData()
     }, [slug])
+
+    if (loading) {
+        return <p>Loading...</p>
+    }
     
     return (
         <>

@@ -4,7 +4,7 @@ export default function Navigation() {
     return (
       <header>
         <nav>
-          <a href="home" id="logo">
+          <a href="/" id="logo">
             Logo
           </a>
           <ul>
