@@ -54,21 +54,17 @@ nav ul a.active {
 }
 
 .cards {
-    max-width: 85%; 
-    margin: 0 auto;
-    gap: 20px;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+    margin: 20px 30px 30px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 50px;
+    column-gap: 10px;
+    padding: 0 30px 30px;
 }
 
 .card {
     display: flex;
     flex-direction: column;
-    width: 30%;
-    padding: 10px;
     align-items: center;
 }
 
@@ -152,9 +148,18 @@ nav ul a.active {
     margin-right: 15px;
 }
 
-@media screen and (max-width: 750px) {
+
+@media screen and (max-width: 950px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 0;
+    }
+    
+}
+
+@media screen and (max-width: 700px) {
     .cards { 
-        flex-direction: column;
+        grid-template-columns: repeat(1, 1fr);
     }
 
     .card {
