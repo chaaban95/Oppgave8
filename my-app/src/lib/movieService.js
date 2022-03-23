@@ -21,8 +21,8 @@ const fields = `
 `
 
 export const getMovies = async () => {
-    const data = await client.fetch(`*[_type == "movie"]{${movieFields}}`)
-    return data
+  const data = await client.fetch(`*[_type == "movie"]{${movieFields}}`)
+  return data
 }
 
   

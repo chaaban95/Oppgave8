@@ -42,7 +42,6 @@ const movie = {
       type: 'reference',
       to: [{ type: 'actor' }],
     },
-    
   ],
   preview: {
     select: {

@@ -6,10 +6,10 @@ import Title from './Title'
 function Picture({ img }) {
     return (
         <>
-        <img className='actors' 
-            src={img}
-            alt={""}
-        />
+            <img className='actors' 
+                src={img}
+                alt={""}
+            />
         </>
     )
 }

@@ -6,12 +6,12 @@ import Title from './Title'
 function Description({ desc, img }) {
     return (
         <>
-        <img className='posters' 
-            src={img}
-            alt={""}
-        />
-        <h4 className='story'>Plot</h4>
-        <p className='summary'>{desc}</p>
+            <img className='posters' 
+                src={img}
+                alt={""}
+            />
+            <h4 className='story'>Plot</h4>
+            <p className='summary'>{desc}</p>
         </>
     )
 }
