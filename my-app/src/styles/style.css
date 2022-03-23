@@ -77,12 +77,10 @@ nav ul a.active {
     margin-bottom: 30px;
 }
 
-.posters {
-    width: 200px;
-}
-
+.posters,
 .actors {
     width: 200px;
+    margin: 0 auto;
 }
 
 .card>h2,
@@ -126,6 +124,32 @@ nav ul a.active {
     justify-content: center;
     align-items: center;
     gap: 20px;
+}
+
+.summary {
+    font-size: large;
+    text-align: center;
+    max-width: 450px;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+
+.story {
+    font-size: large;
+    text-align: center;
+    margin-top: 40px;
+    text-decoration: underline overline;
+}
+
+.filter {
+    width: 500px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.marginright {
+    margin-right: 15px;
 }
 
 @media screen and (max-width: 750px) {

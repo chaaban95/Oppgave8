@@ -23,16 +23,22 @@ function ActorList({ data }) {
 }
 
 export default function Actors() {
-  const [ data, setData] = useState([])
+  const [data, setData] = useState([])
+  const [loading, setLoading] = useState(false)
 
   useEffect(()=>{
     const getActorsData = async () => {
+      setLoading(true)
       const actors = await getActors()
+      setLoading(false)
       setData(actors)
-      console.log(actors)
     }
     getActorsData()
   }, [])
+
+  if (loading) {
+    return <p>Loading...</p>
+  }
   
   return (
     <>

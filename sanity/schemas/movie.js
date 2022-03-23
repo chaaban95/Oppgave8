@@ -24,9 +24,9 @@ const movie = {
       },
     },
     {
-      name: 'releaseDate',
-      title: 'Release date',
-      type: 'datetime',
+      name: 'summary',
+      title: 'Summary',
+      type: 'text',
     },
     {
       name: 'poster',
@@ -47,7 +47,6 @@ const movie = {
   preview: {
     select: {
       title: 'title',
-      date: 'releaseDate',
       media: 'poster',
       actor: 'actor.name',
     },

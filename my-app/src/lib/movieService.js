@@ -2,6 +2,7 @@ import client from './client'
 
 const movieFields = `
   title,
+  summary,
   'actor': actor->name,
   'image': poster{alternativeText, caption, asset->{url}},
   'slug': slug.current,
@@ -10,6 +11,12 @@ const movieFields = `
 const actorFields = `
   name,
   'image': image{alternativeText, caption, asset->{url}},
+  'slug': slug.current,
+`
+const fields = `
+  title,
+  'actor': actor->name.current,
+  'image': poster{alternativeText, caption, asset->{url}},
   'slug': slug.current,
 `
 
@@ -39,4 +46,12 @@ export const getActor = async (slug) => {
     { slug }
   )
   return data?.[0]
+}
+
+export async function getMovieByActor(actor) {
+  const data = await client.fetch(
+    `*[_type == "movie" && actor->name.current==$actor]{${fields}}`,
+    { actor }
+  )
+  return data
 }
